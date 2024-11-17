@@ -3,6 +3,7 @@ package com.AeonAssesment.controller;
 import com.AeonAssesment.common.enums.ActionType;
 import com.AeonAssesment.common.exception.BaseException;
 import com.AeonAssesment.common.model.RestResponse;
+import com.AeonAssesment.common.utils.ValidateUtils;
 import com.AeonAssesment.model.BorrowerRespDTO;
 import com.AeonAssesment.model.BorrowingReq;
 import com.AeonAssesment.model.BorrowingRespDTO;
@@ -23,6 +24,7 @@ public class BorrowingController {
     @Operation(summary = "To process borrowing action")
     public RestResponse<BorrowingRespDTO> process(@PathVariable("actionType") ActionType actionType, @RequestBody BorrowingReq borrowingReq)
     {
+        ValidateUtils.validate(borrowingReq);
         BorrowingRespDTO borrowingRespDTO = borrowingService.processBorrowing(actionType,borrowingReq);
         return RestResponse.success(borrowingRespDTO);
     }

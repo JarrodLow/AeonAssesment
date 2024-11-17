@@ -53,18 +53,6 @@ public class BookService {
                     return BookRespDTO.fromEntityToDTO(bookRepository.saveAndFlush(newBook));
                 }
 
-//                if(retrievedISBN.isPresent() && retrievedBookByISBN.isPresent() &&)
-//                {
-//
-//                }
-//                else if(retrievedISBN.isPresent() && retrievedBookByISBN.isEmpty())
-//                {
-//                    return BookRespDTO.fromEntityToDTO(bookRepository.saveAndFlush(newBook));
-//                }
-//                else if(retrievedISBN.isEmpty() && retrievedBookByISBN.isEmpty())
-//                {
-//                    return BookRespDTO.fromEntityToDTO(bookRepository.saveAndFlush(newBook));
-//                }
                 // author and title not exist && Check ISBN exist or no
                 Optional<List<Book>> beforeLoop = bookRepository.retrieveBookListByISBN(generatedISBN);
                 if(beforeLoop.isEmpty())

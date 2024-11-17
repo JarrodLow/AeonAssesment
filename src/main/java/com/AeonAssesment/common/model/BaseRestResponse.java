@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BaseRestResponse {
     private String status; // This will store the string value from the enum
-    private String message;
+    private String description;
     private Object data;
 
 

@@ -2,6 +2,7 @@ package com.AeonAssesment.controller;
 
 import com.AeonAssesment.common.enums.ActionType;
 import com.AeonAssesment.common.model.RestResponse;
+import com.AeonAssesment.common.utils.ValidateUtils;
 import com.AeonAssesment.model.BorrowerReq;
 import com.AeonAssesment.model.BorrowerRespDTO;
 import com.AeonAssesment.service.BorrowerService;
@@ -21,6 +22,7 @@ public class BorrowerController {
     @Operation(summary = "To add or update borrower information")
     public RestResponse<BorrowerRespDTO> process(@PathVariable("actionType") ActionType actionType, @RequestBody BorrowerReq borrowerRequest)
     {
+        ValidateUtils.validate(borrowerRequest);
         BorrowerRespDTO borrowerRespDTO = borrowerService.processBorrower(actionType,borrowerRequest);
         return RestResponse.success(borrowerRespDTO);
     }

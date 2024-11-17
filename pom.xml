@@ -181,6 +181,15 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.4</version>
+				<configuration>
+					<excludes>
+						<exclude>com.AeonAssesment.common.*</exclude>
+						<exclude>com.AeonAssesment.model.*</exclude>
+						<exclude>com.AeonAssesment.enums.*</exclude>
+						<exclude>com.AeonAssesment.data.*</exclude>
+						<exclude>com.AeonAssesment.Main</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>

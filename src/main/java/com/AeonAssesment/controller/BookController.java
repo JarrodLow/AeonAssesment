@@ -2,6 +2,7 @@ package com.AeonAssesment.controller;
 
 import com.AeonAssesment.common.enums.ActionType;
 import com.AeonAssesment.common.model.RestResponse;
+import com.AeonAssesment.common.utils.ValidateUtils;
 import com.AeonAssesment.model.BookReq;
 import com.AeonAssesment.model.BookRespDTO;
 import com.AeonAssesment.service.BookService;
@@ -23,8 +24,9 @@ public class BookController {
     @Operation(summary = "To add or update book information")
     public RestResponse<BookRespDTO> process(@PathVariable("actionType")ActionType actionType, @RequestBody BookReq bookRequest)
     {
-            BookRespDTO bookRespDTO = bookService.processBook(actionType,bookRequest);
-            return RestResponse.success(bookRespDTO);
+        ValidateUtils.validate(bookRequest);
+        BookRespDTO bookRespDTO = bookService.processBook(actionType,bookRequest);
+        return RestResponse.success(bookRespDTO);
     }
 
     @GetMapping(value = "/retrieve")
