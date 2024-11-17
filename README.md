@@ -1,7 +1,11 @@
 <ins>**How to start Application**</ins>
 1. If you have Intelij, you just need to pull the file from github using either fork or github Desktop. Using the Intelij IDE to start the application using bug or start button.
-2. If not Intelij, can use such command mvn spring-boot:run
-3. Perform the API Response using the Postman Collection shared in the repositories.
+2. If not Intelij, can use command
+   
+   ######       
+    mvn spring-boot:run
+
+4. Perform the API Response using the Postman Collection shared in the repositories.
 
 <ins>**Borrower Controller**</ins>
 1. Create Borrower
