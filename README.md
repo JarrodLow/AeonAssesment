@@ -25,7 +25,9 @@
    ->to perform action to return book by modify the requestBody value. Which is borrowerName, borrowerEmail, isbn and bookId.
 
 <ins>**Database choice**</ins>
+
 -> Use Mysql Workbench. Which is easy to be setup and use for local setup.
+
 -> Add in new table which is book_detail for borrowing.
 
 <ins>**Business Rule Assumption**</ins>
